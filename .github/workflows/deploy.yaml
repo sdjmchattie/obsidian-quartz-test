@@ -67,7 +67,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./quarts/public
+          path: ./quartz/public
 
   # Deploy to GitHub Pages
   deploy:
