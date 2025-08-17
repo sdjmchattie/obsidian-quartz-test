@@ -42,8 +42,6 @@ jobs:
 
       - name: Checkout Obsidian Files
         uses: actions/checkout@v4
-        with:
-          path: content
 
       - name: Checkout Quartz
         uses: actions/checkout@v4
@@ -60,12 +58,17 @@ jobs:
         run: npm install
         working-directory: ./quartz
 
+      - name: Copy custom Quartz config
+        run: |
+          rm ./quartz/quartz.config.ts \
+          && cp ./quartz-data/quartz.config.ts ./quartz/"
+
       - name: Build site contents
-        run: "npx quartz build --directory=../content"
+        run: "npx quartz build --directory=../Website"
         working-directory: ./quartz
 
       - name: Copy redirect index.html
-        run: "cp ./content/index.html ./quartz/public/"
+        run: "cp ./quartz-data/index.html ./quartz/public/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
