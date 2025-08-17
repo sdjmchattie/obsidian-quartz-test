@@ -61,7 +61,7 @@ jobs:
       - name: Copy custom Quartz config
         run: |
           rm ./quartz/quartz.config.ts \
-          && cp ./quartz-data/quartz.config.ts ./quartz/"
+          && cp ./quartz-data/quartz.config.ts ./quartz/
 
       - name: Build site contents
         run: "npx quartz build --directory=../Website"
