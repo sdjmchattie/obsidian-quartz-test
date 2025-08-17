@@ -55,7 +55,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Install Quartz Node.js dependencies
-        run: npm install
+        run: npm ci
         working-directory: ./quartz
 
       - name: Copy custom Quartz config
