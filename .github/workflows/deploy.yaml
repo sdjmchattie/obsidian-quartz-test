@@ -65,7 +65,7 @@ jobs:
         working-directory: ./quartz
 
       - name: Copy redirect index.html
-        run: "cp index.html ./quartz/public/"
+        run: "cp ./content/index.html ./quartz/public/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
