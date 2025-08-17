@@ -64,6 +64,9 @@ jobs:
         run: "npx quartz build --directory=../content"
         working-directory: ./quartz
 
+      - name: Copy redirect index.html
+        run: "cp index.html ./quartz/public/"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
